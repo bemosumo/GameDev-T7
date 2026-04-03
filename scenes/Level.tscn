@@ -69,10 +69,9 @@ omni_range = 50.0
 [node name="Switch" type="MeshInstance3D" parent="." unique_id=2094229860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 25.0375)
 mesh = SubResource("4")
-script = ExtResource("3_kl8ac")
-light = NodePath("../OmniLight3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Switch" unique_id=1447119112]
+script = ExtResource("3_kl8ac")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Switch/StaticBody3D" unique_id=920993292]
 shape = SubResource("5")
