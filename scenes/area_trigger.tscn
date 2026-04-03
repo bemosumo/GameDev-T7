@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b2ri8kre0x8g6"]
+
+[ext_resource type="Script" uid="uid://bm171fhbkaw57" path="res://Script/area_trigger.gd" id="1_q5v47"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hsyun"]
+radius = 5.9974937
+
+[node name="Area Trigger" type="Area3D" unique_id=2089075633]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_q5v47")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1567823447]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_hsyun")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1042034857]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bc11h547c5r7a"]
+
+[ext_resource type="Script" uid="uid://h7dkec0fyxm7" path="res://Script/Player.gd" id="1_p0vlq"]
+[ext_resource type="Script" uid="uid://bvdgicomk85pt" path="res://Script/RayCast.gd" id="2_v6fml"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0rwas"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1309675264]
+script = ExtResource("1_p0vlq")
+
+[node name="Head" type="Node3D" parent="." unique_id=1710694705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1239942778]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1379322355]
+target_position = Vector3(0, -1, -1)
+script = ExtResource("2_v6fml")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=478638259]
+mesh = SubResource("CapsuleMesh_0rwas")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1813560069]
+shape = SubResource("CapsuleShape3D_xhfnw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=187696085]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1168799560]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Koin : 0"
